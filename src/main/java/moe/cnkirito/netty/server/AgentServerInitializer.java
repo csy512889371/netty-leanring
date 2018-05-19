@@ -2,7 +2,6 @@ package moe.cnkirito.netty.server;
 
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.ChannelPipeline;
-import io.netty.channel.DefaultEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 
 /**
@@ -17,6 +16,6 @@ public class AgentServerInitializer extends ChannelInitializer<SocketChannel> {
         ChannelPipeline pipeline = socketChannel.pipeline();
         pipeline.addLast(new AgentServerDecoder());
         pipeline.addLast(new AgentServerEncoder());
-        pipeline.addLast(new DefaultEventLoopGroup(1000), new AgentServerHandler());
+        pipeline.addLast(new AgentServerHandler());
     }
 }
