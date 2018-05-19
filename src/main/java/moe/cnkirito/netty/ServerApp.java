@@ -2,8 +2,6 @@ package moe.cnkirito.netty;
 
 import moe.cnkirito.netty.server.AgentServerConnecManager;
 
-import java.util.concurrent.CountDownLatch;
-
 /**
  * @author 徐靖峰[OF2938]
  * company qianmi.com

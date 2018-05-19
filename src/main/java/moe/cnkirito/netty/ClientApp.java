@@ -11,18 +11,17 @@ public class ClientApp {
 
     public static void main(String[] args) {
         AgentClient agentClient = new AgentClient();
-        for(int i=0;i<1000;i++){
-            new Thread(new Runnable() {
-                @Override
-                public void run() {
-                    Object invoke = null;
+        for (int i = 0; i < 1000; i++) {
+            new Thread(() -> {
+                while (true) {
                     try {
-                        invoke = agentClient.invoke("1", "1", "1", "1");
+                        agentClient.invoke("1", "1", "1", "1");
+                        Thread.sleep(10);
                     } catch (Exception e) {
                         e.printStackTrace();
                     }
-                    System.out.println(invoke);
                 }
+
             }).start();
 
         }
